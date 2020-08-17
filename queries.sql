@@ -1,5 +1,5 @@
--- Функция, определяющая наличие определенной статьи на определенной языке.
--- Используется в одном из представлений.
+-- Funkciya, opredelyayushchaya nalichie opredelennoj stat'i na opredelennoj yazyke.
+-- Ispol'zuetsya v odnom iz predstavlenij.
 
 DROP FUNCTION IF EXISTS language_article;
 
@@ -21,7 +21,7 @@ END//
 
 DELIMITER ;
 
--- Процедура для получения количества статей в определенной категории
+-- Procedura dlya polucheniya kolichestva statej v opredelennoj kategorii
 
 DROP PROCEDURE IF EXISTS articles_count;
 
@@ -41,7 +41,7 @@ END//
 
 DELIMITER ;
 
--- Получение текста статьи по id и языку
+-- Poluchenie teksta stat'i po id i yazyku
 
 SELECT current_bodies.body FROM articles 
   JOIN current_bodies
@@ -52,7 +52,7 @@ WHERE articles.id = 309
   AND languages.id = 1;
  
  
--- Выбор списка статей по категории
+-- Vybor spiska statej po kategorii
 
 SELECT articles.id FROM articles 
   JOIN categories_articles 
@@ -62,7 +62,7 @@ SELECT articles.id FROM articles
   WHERE categories.id = 1;
 
 
- -- Подборка медиа по категории
+-- Podborka media po kategorii
  
  SELECT media.id, media.filename FROM media
    JOIN articles 
@@ -73,7 +73,7 @@ SELECT articles.id FROM articles
      ON categories.id = categories_articles.category_id 
    WHERE categories.name = 'enim';
    
-  -- Статистика по проведенным в статьях правкам
+-- Statistika po provedennym v stat'yah pravkam
 
 CREATE VIEW edit_makers AS
   SELECT editings.id AS 'id', 
@@ -94,7 +94,7 @@ CREATE VIEW edit_makers AS
       ON articles.id = current_bodies.article_id;
   
      
--- Статистика наличия текста статей на разных языках
+-- Statistika nalichiya teksta statej na raznyh yazykah
 
 CREATE VIEW articles_languages AS
   SELECT articles.id,
