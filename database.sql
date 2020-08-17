@@ -1,6 +1,6 @@
--- База данных - аналог сервиса "Википедия". Данная база данных состоит из 10 таблиц, таких как статьи, разделы, редакторы, пользователи, языки и др. 
--- Используемые запросы позволяют получить доступ к нужной статье, а так же узнать, кто и когда вносил правки
--- и запрашивать предыдущие версии статей, а также писать новые статьи. 
+-- Baza dannyh - analog servisa "Vikipediya". Dannaya baza dannyh sostoit iz 10 tablic, takih kak stat'i, razdely, redaktory, pol'zovateli, yazyki i dr. 
+-- Ispol'zuemye zaprosy pozvolyayut poluchit' dostup k nuzhnoj stat'e, a tak zhe uznat', kto i kogda vnosil pravki
+-- i zaprashivat' predydushchie versii statej, a takzhe pisat' novye stat'i.
 
 DROP SCHEMA IF EXISTS `wikipedia` ;
 
@@ -8,7 +8,7 @@ CREATE SCHEMA IF NOT EXISTS `wikipedia` DEFAULT CHARACTER SET utf8 ;
 
 USE `wikipedia` ;
 
--- Таблица "редакторы"
+-- Tablica "redaktory"
 
 DROP TABLE IF EXISTS `wikipedia`.`editors` ;
 
@@ -324,7 +324,7 @@ INSERT INTO `editors` (`id`, `is_registred`, `ip_addr`, `created_at`) VALUES (29
 INSERT INTO `editors` (`id`, `is_registred`, `ip_addr`, `created_at`) VALUES (300, 1, '35.136.242.249', '1987-11-16 00:58:25');
 
 
--- Таблица "статьи"
+-- Tablica "stat'i"
 
 DROP TABLE IF EXISTS `wikipedia`.`articles` ;
 
@@ -781,7 +781,7 @@ INSERT INTO `articles` (`id`, `created_by_editor_id`, `created_at`, `updated_at`
 INSERT INTO `articles` (`id`, `created_by_editor_id`, `created_at`, `updated_at`) VALUES (433, 293, '2018-12-21 19:32:10', '1978-07-08 14:43:52');
 INSERT INTO `articles` (`id`, `created_by_editor_id`, `created_at`, `updated_at`) VALUES (434, 8, '1992-02-06 23:41:09', '2009-03-31 06:58:37');
 
--- Таблица "языки"
+-- Tablica "yazyki"
 
 DROP TABLE IF EXISTS `wikipedia`.`languages` ;
 
@@ -803,7 +803,7 @@ INSERT INTO `languages` (`id`, `name`) VALUES (5, 'fr');
 INSERT INTO `languages` (`id`, `name`) VALUES (6, 'it');
 INSERT INTO `languages` (`id`, `name`) VALUES (7, 'ru');
 
--- Таблица "редактирование"
+-- Tablica "redaktirovanie"
 
 DROP TABLE IF EXISTS `wikipedia`.`editings` ;
 
@@ -1142,7 +1142,7 @@ INSERT INTO `editings` (`id`, `language_id`, `editor_id`, `created_at`, `is_conf
 INSERT INTO `editings` (`id`, `language_id`, `editor_id`, `created_at`, `is_confirmed`) VALUES (308, 1, 196, '2006-10-14 11:12:05', 0);
 INSERT INTO `editings` (`id`, `language_id`, `editor_id`, `created_at`, `is_confirmed`) VALUES (309, 3, 9, '1981-12-21 20:31:12', 1);
 
--- Таблица выбранной статьи
+-- Tablica vybrannoj stat'i
 
 DROP TABLE IF EXISTS `wikipedia`.`current_bodies` ;
 
@@ -2204,7 +2204,7 @@ INSERT INTO `archived_bodies` (`id`, `article_id`, `language_id`, `editing_id`, 
 INSERT INTO `archived_bodies` (`id`, `article_id`, `language_id`, `editing_id`, `body`) VALUES (527, 241, 2, 116, 'eos');
 INSERT INTO `archived_bodies` (`id`, `article_id`, `language_id`, `editing_id`, `body`) VALUES (528, 31, 1, 741, 'voluptas');
 
--- Таблица "типы"
+-- Tablica "tipy"
 
 DROP TABLE IF EXISTS `wikipedia`.`media_types` ;
 
@@ -2225,7 +2225,7 @@ INSERT INTO `media_types` (`id`, `name`) VALUES (5, 'esse');
 INSERT INTO `media_types` (`id`, `name`) VALUES (2, 'sed');
 INSERT INTO `media_types` (`id`, `name`) VALUES (1, 'voluptas');
 
--- Таблица "медиа"
+-- Tablica "media"
 
 DROP TABLE IF EXISTS `wikipedia`.`media` ;
 
@@ -2366,7 +2366,7 @@ INSERT INTO `media` (`id`, `filename`, `media_type_id`, `editor_id`, `article_id
 INSERT INTO `media` (`id`, `filename`, `media_type_id`, `editor_id`, `article_id`, `created_at`) VALUES (900, 'autem', 3, 166, 82, '2002-07-26 14:02:51');
 
 
--- Таблица "пользователи"
+-- Tablica "pol'zovateli"
 
 DROP TABLE IF EXISTS `wikipedia`.`users` ;
 
@@ -2477,7 +2477,7 @@ INSERT INTO `users` (`id`, `editor_id`, `name`, `email`, `created_at`, `updated_
 INSERT INTO `users` (`id`, `editor_id`, `name`, `email`, `created_at`, `updated_at`) VALUES (84, 254, 'Dr. Dominic Von IV', 'hermann.otho@example.net', '1990-08-06 17:57:58', '1983-03-02 10:18:38');
 INSERT INTO `users` (`id`, `editor_id`, `name`, `email`, `created_at`, `updated_at`) VALUES (85, 163, 'Shanny Skiles MD', 'po\'connell@example.net', '2003-04-21 14:13:52', '1996-09-02 03:12:27');
 
--- Таблица "разделы"
+-- Tablica "razdely"
 
 DROP TABLE IF EXISTS `wikipedia`.`categories` ;
 
@@ -2542,7 +2542,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES (47, 'ut');
 INSERT INTO `categories` (`id`, `name`) VALUES (37, 'veritatis');
 INSERT INTO `categories` (`id`, `name`) VALUES (9, 'voluptatem');
 
--- Таблица категории статей
+-- Tablica kategorii statej
 
 DROP TABLE IF EXISTS `wikipedia`.`categories_articles` ;
 
